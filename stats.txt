@@ -1,0 +1,7 @@
+Using biobert and stratified k-fold cross validation with k=5:
+
+Expression:
+Average Precision: 0.9689655172413794
+Average Recall: 0.9548387096774194
+Average F1 Score: 0.9617073170731707
+
