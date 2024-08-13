@@ -107,6 +107,9 @@ def main():
         avg_f1 = np.mean(f1_scores)
 
         print(f"Classification task: {classification_task}")
+        print(f"Precision scores: {precision_scores}")
+        print(f"Recall scores: {recall_scores}")
+        print(f"F1 Scores: {f1_scores}")
         print(f"Average Precision: {avg_precision}")
         print(f"Average Recall: {avg_recall}")
         print(f"Average F1 Score: {avg_f1}")
