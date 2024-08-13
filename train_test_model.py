@@ -70,6 +70,8 @@ def main():
             per_device_eval_batch_size=16,
             num_train_epochs=args.num_train_epochs,
             weight_decay=0.01,
+            eval_strategy="steps",
+            eval_steps=500,
             save_strategy="epoch",
         )
 
