@@ -63,9 +63,6 @@ def main():
 
         data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
 
-        model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=2,
-                                                                   ignore_mismatched_sizes=True)
-
         training_args = TrainingArguments(
             output_dir=os.path.join(args.output_dir_name, classification_task),
             learning_rate=2e-5,
@@ -87,6 +84,8 @@ def main():
             train_dataset = tokenized_dataset.select(train_index)
             eval_dataset = tokenized_dataset.select(test_index)
 
+            model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=2,
+                                                                       ignore_mismatched_sizes=True)
             trainer = Trainer(
                 model=model,
                 args=training_args,
@@ -112,6 +111,8 @@ def main():
         print(f"Average Recall: {avg_recall}")
         print(f"Average F1 Score: {avg_f1}")
 
+        model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=2,
+                                                                   ignore_mismatched_sizes=True)
         trainer = Trainer(
             model=model,
             args=training_args,
