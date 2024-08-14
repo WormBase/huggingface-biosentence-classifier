@@ -107,14 +107,17 @@ def main():
         avg_precision = np.mean(precision_scores)
         avg_recall = np.mean(recall_scores)
         avg_f1 = np.mean(f1_scores)
+        std_precision = np.std(precision_scores)
+        std_recall = np.std(recall_scores)
+        std_f1 = np.std(f1_scores)
 
         print(f"Classification task: {classification_task}")
         print(f"Precision scores: {precision_scores}")
         print(f"Recall scores: {recall_scores}")
         print(f"F1 Scores: {f1_scores}")
-        print(f"Average Precision: {avg_precision}")
-        print(f"Average Recall: {avg_recall}")
-        print(f"Average F1 Score: {avg_f1}")
+        print(f"Average Precision: {avg_precision:5.4f} ± {std_precision:5.4f}")
+        print(f"Average Recall: {avg_recall:5.4f} ± {std_recall:5.4f}")
+        print(f"Average F1 Score: {avg_f1:5.4f} ± {std_f1:5.4f}")
 
         model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=2,
                                                                    ignore_mismatched_sizes=True)
