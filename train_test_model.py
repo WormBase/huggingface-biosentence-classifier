@@ -118,6 +118,16 @@ def main():
 
         model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=2,
                                                                    ignore_mismatched_sizes=True)
+
+        training_args = TrainingArguments(
+            output_dir=os.path.join(args.output_dir_name, classification_task),
+            learning_rate=2e-5,
+            per_device_train_batch_size=16,
+            per_device_eval_batch_size=16,
+            num_train_epochs=args.num_train_epochs,
+            weight_decay=0.01,
+            save_strategy="epoch",
+        )
         trainer = Trainer(
             model=model,
             args=training_args,
