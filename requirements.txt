@@ -4,3 +4,4 @@ numpy
 transformers
 scikit-learn
 torch
+accelerate

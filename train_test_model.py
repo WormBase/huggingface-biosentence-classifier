@@ -57,7 +57,7 @@ def main():
         sentences, labels = load_dataset_from_file(args.dataset_name, classification_column)
 
         tokenizer = AutoTokenizer.from_pretrained(model_name)
-        encodings = tokenizer(sentences, truncation=True, padding=True, return_tensors="pt")
+        encodings = tokenizer(sentences, truncation=True)
         encodings["labels"] = torch.tensor(labels)
         tokenized_dataset = Dataset.from_dict(encodings)
 
