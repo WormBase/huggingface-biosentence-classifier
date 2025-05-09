@@ -40,3 +40,6 @@ sentence<TAB>fully_curatable<TAB>partially_curatable<TAB>language_related
 
 - Fine-tuned models and tokenizers are saved in the specified output directory.
 - Evaluation metrics are printed for each classification task.
+
+## Pre-trained Models
+Pretrained models can be found on [Hugging Face](https://huggingface.co/alliance-genome-account).
